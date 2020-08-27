@@ -26,9 +26,9 @@ def turn(direction,c):
 def simulate():
     x,y = 1,1 # 뱀의 머리 위치
     data[x][y] = 2 # 뱀이 존재하는 위치는 2 로 표시
-    direction = 0
-    time = 0
-    index = 0
+    direction = 0 # 처음에 동쪽을 보고 있음
+    time = 0 # 시작한 뒤에 지난 초
+    index = 0 #다음에 회전할 정보
     q= [(x,y)] # 뱀이 차지하고 있는 위치 정보
     while True:
         nx = x+dx[direction]
@@ -52,5 +52,4 @@ def simulate():
             index += 1
     return time
 print(simulate())
-
 
