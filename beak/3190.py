@@ -1,6 +1,5 @@
 n = int(input())  #맵 크기
 k = int(input())    #사과개수
-mm
 data = [[0]*(n+1) for _ in range(n+1)] #맵정보 
 info = [] 
 
