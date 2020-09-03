@@ -14,7 +14,7 @@ def solution(progresses, speeds):
             ans.append(cnt)
             cnt = 1
             idx = i
-        if i == len(days)-1:
+        if i == len(days)-1: #배열 끝에서 cnt셌던 것을 붙여주기 위함
             ans.append(cnt)
     return ans
 
