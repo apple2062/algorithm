@@ -13,7 +13,7 @@ def solution(hot, k):
             if sum(hot) >= k:
                 return cnt
             else:
-                return False
+                return -1
         heapq.heappush(hot, heapq.heappop(hot) + heapq.heappop(hot) * 2)
         # hot.sort()
         cnt += 1
