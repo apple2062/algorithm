@@ -59,4 +59,4 @@ for i in range(1,n+1):
         print("INFINITY")
     else:
         print(distance[i])
-
+#grapg, visited, distance(=cost)
