@@ -23,7 +23,7 @@ for _ in range(m):
 # 방문하지 않은 노드 중, 가장 최단 거리가 짧은 노드 인덱스 반환
 def get_smallest_node():
     min_val = INF
-    index = 0 
+    index = 0
     for i in range(1,n+1):
         if distance[i] < min_val and not visited[i]:
             min_val = distance[i]
@@ -59,4 +59,4 @@ for i in range(1,n+1):
         print("INFINITY")
     else:
         print(distance[i])
-#grapg, visited, distance(=cost)
+
