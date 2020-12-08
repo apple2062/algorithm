@@ -1,5 +1,7 @@
 # https://www.acmicpc.net/problem/1012
 # 계속 런타임 에러 났었다. 왜? 재귀limit 을 선언안해줬따
+# 필요없는 visited=[]를 선언해서 메모리만 차지하게 코드작성했다. visited 왜 필요한데?ㅋㅋ
+
 
 import sys #이부분! 재귀limit선언!
 sys.setrecursionlimit(5000)
