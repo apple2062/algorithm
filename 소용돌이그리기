@@ -23,7 +23,7 @@ def solution(n):
     num = 1 #value값인듯
     while in_range(ci,cj,n) and pane[ci][cj] == 0: #좌표 범위가 matrix 내에 존재하고 현재 pane값이 0 일 때
         for k in range(4):
-            if not in_range(ci, cj, n) or pane[ci][cj] != 0: # 이 조건 필요한거..? 이미 while 문에서 걸러지는데..?
+            if not in_range(ci, cj, n) or pane[ci][cj] != 0: # 이 조건 필요한거..? 이미 while 문에서 걸러지는데..?>> for 문 하나 돌릴 때마다 조건을 봐줘야 하니까 필요하지. 이조건 없애고 해봐 pane값 달라져 해봐봐
                 break #이 조건 필요한거..?
             while True:
                 pane[ci][cj] = num
