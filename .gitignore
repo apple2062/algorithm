@@ -1,4 +1,9 @@
-## ingnore list ##
+  
+##yeonju ignore file##
+
+*.DS_Store
+
+__pycache__/*## ingnore list ##
 
 *.swp
 
