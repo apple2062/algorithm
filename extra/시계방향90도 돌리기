@@ -1,0 +1,13 @@
+# 2차원 배열 시계방향으로 90도 회전하기
+
+def solution(matrix):
+    answer = [[0] * len(matrix) for _ in range(len(matrix))]
+    for a in range(len(matrix)):
+        for b in range(len(matrix)):
+            answer[b][len(matrix)-a-1] = matrix[a][b]
+    print(answer)
+
+
+matrix = list(list(map(int,input().split())))
+solution(matrix)
+
