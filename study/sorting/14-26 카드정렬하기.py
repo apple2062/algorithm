@@ -1,4 +1,6 @@
 # 26 카드 정렬하기
+# 시간 복잡도 : N*O(log N) = O(N log N)
+
 import heapq
 import sys
 input = sys.stdin.readline
