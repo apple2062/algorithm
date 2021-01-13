@@ -17,3 +17,18 @@ def solution(n,stages):
         final.append(fail[i][0])
     final += stage
     return final
+
+# 두 번째 풀이 
+
+def solution(n,stages):
+    answer = []
+    stages.sort()
+    for i in range(1,n+1):
+        cnt = stages.count(i)
+        if len(stages):
+            answer.append((i,cnt/len(stages)))
+        else:
+            answer.append((i,0))
+        stages = stages[cnt:]
+    return list(i[0] for i in sorted(answer, key = lambda x:-x[1]))
+
