@@ -1,4 +1,4 @@
-# 가사 검색
+v=# 가사 검색
 
 # 첫 번째 풀이 ( 시간 복잡도 : O(N log N) + O(M * logN) ..? )
 from collections import defaultdict
@@ -14,9 +14,7 @@ def solution(words,queries):
     # 길이별로 저장
     for word in words:
         candidate[len(word)].append(word)
-        #print(candidate)
         reverse_candidate[len(word)].append(word[-1::-1])
-        #print(reverse_candidate)
 
     #정렬
     for cand in candidate.values():
@@ -40,6 +38,7 @@ def solution(words,queries):
             start,end = query.replace('?','a'),query.replace('?','z')
             answer.append(bisect_right(target, end) - bisect_left(target, start))
     return answer
+
 
 -----------------------------------------------------------------------------------------------------
 # 두번째 풀이 (trie 자료구조)
@@ -124,3 +123,4 @@ def solution(words, queries):
             answer.append(t.search_count(chars, check_length))
 
     return answer
+
