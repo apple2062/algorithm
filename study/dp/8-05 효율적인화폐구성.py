@@ -12,10 +12,11 @@ dp= [inf]*(m+1)
 
 dp[0]=0
 
-for i in range(n):
-      for j in range(currency[i], m+1):
-            if dp[j-currency[i]] != inf:
-                  dp[j] = min(dp[j], dp[j-currency[i]]+1)
+for i in currency:
+      for j in range(i, m+1):
+            if dp[j-i] != inf:
+                  dp[j] = min(dp[j], dp[j-i]+1)
+                  print(dp)
 
 if dp[m] == inf:
       print(-1)
