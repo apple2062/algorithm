@@ -36,4 +36,4 @@ for i in range(1, v+1):
 
 # 부모 테이블 내용 출력
 for i in range(1, v+1):
-    print(parent[i], end = ' ') # 1 1 2 1 5 5
+    print(parent[i], end = ' ') # 1 1 1 1 5 5
