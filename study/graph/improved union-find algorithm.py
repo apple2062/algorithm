@@ -14,7 +14,7 @@ def union_parent(parent,a,b):
 def find_parent(parent,x):
     # 루트 노드가 아니라면, 루트 노드를 찾을 때 까지 재귀적으로 호출
     if parent[x] != x:
-        return find_parent(parent,parent[x])
+        parent[x] = find_parent(parent,parent[x])
     # basic union-find algo와 달리 부모 테이블 값을 바로 갱신할 수 있도록함.
     return parent[x]
 
