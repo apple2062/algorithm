@@ -1,6 +1,6 @@
 # 알파벳 (1987) - https://www.acmicpc.net/problem/1987
 '''
-두번째 시도: TLE in python3. pypy3로 통과했다. (dfs)
+두번째 시도: TLE in python3. (dfs)
           tc1.
           2 2
           AB
