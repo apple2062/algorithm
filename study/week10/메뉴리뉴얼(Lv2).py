@@ -1,0 +1,52 @@
+'''
+처음 접근 방식 : 각 코스 구성 원소에 따른 COmbinations 조합들에 대한 개수를 저장하기 위해, defaultdict() 를 활용하고자 함
+                1. orders에 대한 쓰인 원소들 집합 alpa set 초기 선언
+어려웠던 부분 : defaultdict() 까지 만드든 건 어려움이 없었지만, 생성한 dict 에서 value 값의 max 가 두개 이상 존재 하는 경우,
+            아이디어 생각하느라 고생했다..ㅋㅋ max value 가 두 개 이상이었던 경우 처리가 어려웠음
+            +
+            course 보다 max_alphlen 의 길이가 짧은 경우, course 배열을 변경해주어야 하는데 그걸 처음에 안해서 틀렸었다.
+'''
+
+from collections import defaultdict
+from itertools import combinations
+
+def menu_combo(alpha, i):
+    menu = defaultdict(int)
+    for i in combinations(alpha, i):
+        menu[i]
+    return menu
+
+def solution(orders, course):
+    answer = []
+    alpha = set()
+    max_alphlen = 0
+    idx = 0
+    for i in orders:
+        max_alphlen = max(max_alphlen, len(i))
+        for j in i:
+            alpha.add(j)
+        orders[idx] = ''.join(sorted(i))
+        idx+=1
+    alpha = sorted(list(alpha))
+    course = [i for i in course if i<=max_alphlen]
+    for i in course:  # course 에 주어 단품 메뉴 개수 마다
+        possible_menu = menu_combo(alpha, i) # 가능한 메뉴 조합의 수
+        for j in orders:
+            menu = combinations(j, i)
+            for k in menu:
+                possible_menu[k] += 1
+        key_max = max(possible_menu.items(), key=lambda x: x[1])  #value 값이 최대인 (key , value) 쌍 리턴진
+        # 사람들이 두 명 이상 추천했다면
+        if key_max[1] >= 2:
+            for k,l in possible_menu.items():
+                if l == key_max[1]:
+                    answer.append(''.join(list(k)))
+    return sorted(answer)
+
+
+#orders = ["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"]
+orders = ["XYZ", "XWY", "WXA"]
+course = [2, 3, 4]
+# result = ["WX", "XY"]
+print(solution(orders, course))
+
