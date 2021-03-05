@@ -17,5 +17,6 @@ while True:
     if dic_set == set(dic.values()):
         break
 
+print(len(dic))
 for i in dic.keys():
     print(i)
