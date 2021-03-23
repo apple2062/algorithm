@@ -18,7 +18,7 @@ ans = 0
 def dfs(x,y,k,prob,visited):
     global ans
     if k==N:
-        if len(set(visited)) == N+1:
+        if len(visited) == N+1:
             ans += prob
         return
     for i in range(4):
@@ -29,4 +29,4 @@ def dfs(x,y,k,prob,visited):
 
 
 dfs(0,0,0,1,[(0,0)])
-print('{:.10f}'.format(ans))
+print(ans)
