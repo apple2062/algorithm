@@ -19,3 +19,24 @@ def solution(matrix):
 n = int(input()) #탑의 수
 matrix = list(map(int,input().split()))
 print(solution(matrix))
+
+-------------------------------------------------------------
+
+# 탑 ( https://www.acmicpc.net/problem/2493 )
+
+n = int(input())
+matrix = list(map(int,input().split()))
+stack = []
+answer = [0] * n
+
+for i in range(n):
+    target = matrix[i]
+    while stack and matrix[stack[-1]] < target :
+        stack.pop()
+    if stack:
+        answer[i] = stack[-1] + 1
+    stack.append(i)
+
+print(' '.join(list(map(str, answer))))
+
+
