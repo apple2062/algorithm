@@ -1,0 +1,13 @@
+# CARTS 테이블은 결제된 장바구니의 정보를 담은 테이블입니다
+# CART_PRODUCTS 테이블은 장바구니에 담긴 상품 정보를 담은 테이블입니다
+
+# . 밀가루를 구입한 유저의 아이디를 조회하는 SQL 문을 작성해주세요.
+
+# 이때 결과는 유저의 아이디 순으로 나와야 합니다.
+
+
+SELECT DISTINCT CARTS.USER_ID
+FROM CART_PRODUCTS
+JOIN CARTS ON CART_PRODUCTS.CART_ID = CARTS.ID
+WHERE CART_PRODUCTS.NAME = "Flour"
+ORDER BY CARTS.USER_ID
