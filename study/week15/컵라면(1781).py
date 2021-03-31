@@ -28,6 +28,8 @@ def solution(info):
         if i[0] < len(q):
             # min heap 성질을 활용해 라면 개수 가장 작은 원소 pop해버림
             heapq.heappop(q)
+     return sum(q)
+
 n = int(input()) #숙제의 개수
 info = []
 for i in range(n):
