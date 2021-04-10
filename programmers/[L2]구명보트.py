@@ -1,3 +1,8 @@
+# 구명보트 ( https://programmers.co.kr/learn/courses/30/lessons/42885#qna )
+# pop,del,remove를 쑤는 순간 효율성 불통 되어 버렸다...ㅠㅠㅠ 애초에 그렇게 접근하면 안되고
+# 핵심은 indexing 으로의 접근이었다!!!
+
+
 def solution(people, limit):
     answer = 0
     #맨 앞, 맨 뒤 더했을 때 구출 가능하면 그렇게 빼고
