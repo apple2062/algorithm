@@ -1,5 +1,6 @@
 # 이진변환 반복하기 (https://programmers.co.kr/learn/courses/30/lessons/70129)
 # bin(), oct(), hex() 내장 함수 활용하기
+# https://www.daleseo.com/python-int-bases/
 
 
 def solution(s):
